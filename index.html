@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دبیرستان شهید حسن باقری</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #000000;
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(212, 175, 55, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(255, 215, 0, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(184, 134, 11, 0.1) 0%, transparent 60%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* حباب‌های نورانی طلایی */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        body::before {
+            width: 400px;
+            height: 400px;
+            background: #d4af37;
+            top: -150px;
+            right: -100px;
+            animation: float1 12s ease-in-out infinite;
+        }
+
+        body::after {
+            width: 350px;
+            height: 350px;
+            background: #b8860b;
+            bottom: -120px;
+            left: -100px;
+            animation: float2 15s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-40px, 50px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(50px, -40px); }
+        }
+
+        /* کارت شیشه‌ای مشکی/طلایی */
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(20, 20, 20, 0.55);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 28px;
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(212, 175, 55, 0.15),
+                inset 0 1px 0 rgba(212, 175, 55, 0.25);
+            padding: 45px 35px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* درخشش طلایی بالای کارت */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.9), transparent);
+        }
+
+        /* لوگو */
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.6),
+                0 0 25px rgba(212, 175, 55, 0.2),
+                inset 0 1px 0 rgba(212, 175, 55, 0.3);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow:
+                0 12px 40px rgba(212, 175, 55, 0.5),
+                0 0 35px rgba(212, 175, 55, 0.4),
+                inset 0 1px 0 rgba(212, 175, 55, 0.4);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+
+        .logo-placeholder {
+            font-size: 55px;
+            color: #d4af37;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.9);
+        }
+
+        /* تیتر */
+        h1 {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 20px rgba(212, 175, 55, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            color: rgba(212, 175, 55, 0.65);
+            font-size: 14px;
+            margin-bottom: 32px;
+            letter-spacing: 0.5px;
+        }
+
+        /* خط جداکننده طلایی */
+        .divider {
+            width: 60px;
+            height: 3px;
+            margin: 0 auto 30px;
+            background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* دکمه شیشه‌ای مشکی/طلایی */
+        .btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+            padding: 18px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(212, 175, 55, 0.15);
+            transition: all 0.35s ease;
+            overflow: hidden;
+        }
+
+        /* افکت درخشش طلایی روی دکمه */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.25), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.7);
+            background: rgba(30, 25, 10, 0.7);
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.7),
+                0 0 30px rgba(212, 175, 55, 0.35),
+                inset 0 1px 0 rgba(212, 175, 55, 0.35);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-icon {
+            font-size: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            flex-shrink: 0;
+            transition: all 0.35s ease;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+
+        .btn:hover .btn-icon {
+            transform: scale(1.1) rotate(-5deg);
+            background: rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: right;
+        }
+
+        .btn-text small {
+            font-size: 11px;
+            font-weight: 400;
+            color: rgba(212, 175, 55, 0.65);
+            margin-top: 2px;
+        }
+
+        /* ===== فوتر ===== */
+        .footer {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            line-height: 1.8;
+        }
+
+        .footer .credit {
+            display: block;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer .credit strong {
+            background: linear-gradient(90deg, #b8860b, #ffd700, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 20px;
+                border-radius: 22px;
+            }
+            h1 {
+                font-size: 21px;
+            }
+            .logo {
+                width: 95px;
+                height: 95px;
+            }
+            .btn {
+                font-size: 15px;
+                padding: 15px 16px;
+            }
+            .btn-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- لوگو -->
+        <div class="logo">
+            <img src="logo.png" alt="لوگو"
+                 onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'logo-placeholder\'>🎓</span>';">
+        </div>
+
+        <!-- تیتر -->
+        <h1>دبیرستان شهید حسن باقری</h1>
+        <p class="subtitle">دسترسی سریع به سامانه‌ها و خدمات مدرسه</p>
+        <div class="divider"></div>
+
+        <!-- دکمه‌ها -->
+        <div class="buttons">
+            <a href="https://example.com/students" class="btn btn-students" target="_blank">
+                <span class="btn-icon">👨‍🎓</span>
+                <span class="btn-text">
+                    استعلام کلاس‌های دانش‌آموزان
+                    <small>مشاهده برنامه و کلاس‌ها</small>
+                </span>
+            </a>
+
+            <a href="https://example.com/teachers" class="btn btn-teachers" target="_blank">
+                <span class="btn-icon">👨‍🏫</span>
+                <span class="btn-text">
+                    سامانه استعلام کلاسی اساتید
+                    <small>ورود به پنل اساتید</small>
+                </span>
+            </a>
+        </div>
+
+        <!-- فوتر -->
+        <div class="footer">
+            <span class="credit">طراحی و توسعه توسط <strong>تیم پشتیبانی شهید حسن باقری</strong></span>
+        </div>
+    </div>
+
+</body>
+</html>
