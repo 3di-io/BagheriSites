@@ -26,7 +26,6 @@
         }
 
         body {
-            /* پس‌زمینه تیره ملایم با گرادیان رنگی - نه مشکی خالص */
             background: #14141a;
             background-image:
                 radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.12) 0%, transparent 45%),
@@ -42,7 +41,6 @@
             min-height: 100dvh;
         }
 
-        /* حباب‌های شیشه‌ای پس‌زمینه */
         body::before,
         body::after {
             content: '';
@@ -82,15 +80,12 @@
             50% { transform: translate(40px, -30px); }
         }
 
-        /* کارت شیشه‌ای اصلی */
         .container {
             position: relative;
             z-index: 1;
-            /* شیشه‌ای واقعی */
             background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            /* حاشیه زرد ملایم */
             border: 1px solid rgba(212, 175, 55, 0.25);
             border-radius: 24px;
             box-shadow:
@@ -109,7 +104,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* درخشش ملایم بالای کارت */
         .container::before {
             content: '';
             position: absolute;
@@ -122,7 +116,6 @@
             border-radius: 50%;
         }
 
-        /* لوگو */
         .logo {
             width: 110px;
             height: 110px;
@@ -131,7 +124,6 @@
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            /* حاشیه زرد ملایم */
             border: 2px solid rgba(212, 175, 55, 0.35);
             display: flex;
             align-items: center;
@@ -164,13 +156,11 @@
             color: #d4af37;
         }
 
-        /* تیتر */
         h1 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 0.3px;
-            /* رنگ زرد ملایم */
             color: #e8d9a8;
             text-shadow: 0 1px 8px rgba(212, 175, 55, 0.2);
         }
@@ -183,7 +173,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* خط جداکننده */
         .divider {
             width: 50px;
             height: 1px;
@@ -211,7 +200,6 @@
             gap: 12px;
         }
 
-        /* دکمه‌های شیشه‌ای */
         .btn {
             position: relative;
             display: flex;
@@ -224,11 +212,9 @@
             color: #fff;
             font-size: 15.5px;
             font-weight: 500;
-            /* شیشه‌ای */
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            /* حاشیه زرد ملایم */
             border: 1px solid rgba(212, 175, 55, 0.25);
             box-shadow:
                 0 4px 16px rgba(0, 0, 0, 0.25),
@@ -239,7 +225,6 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* افکت درخشش روی دکمه */
         .btn::before {
             content: '';
             position: absolute;
@@ -271,7 +256,6 @@
             transform: translateY(-1px);
         }
 
-        /* آیکون دکمه */
         .btn-icon {
             font-size: 20px;
             width: 44px;
@@ -280,11 +264,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* شیشه‌ای */
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            /* حاشیه زرد ملایم */
             border: 1px solid rgba(212, 175, 55, 0.3);
             flex-shrink: 0;
             transition: all 0.35s ease;
@@ -331,7 +313,6 @@
             color: rgba(212, 175, 55, 0.85);
         }
 
-        /* فلش */
         .btn-arrow {
             color: rgba(212, 175, 55, 0.4);
             font-size: 18px;
@@ -345,7 +326,6 @@
             transform: translateX(-4px);
         }
 
-        /* فوتر */
         .footer {
             margin-top: 30px;
             padding-top: 20px;
@@ -366,7 +346,6 @@
             color: #e8d9a8;
         }
 
-        /* ========== بهینه‌سازی موبایل ========== */
         @media (max-width: 520px) {
             body {
                 padding: 12px;
@@ -459,7 +438,6 @@
             }
         }
 
-        /* حالت افقی روی موبایل */
         @media (max-height: 600px) and (orientation: landscape) {
             body {
                 align-items: flex-start;
@@ -493,7 +471,6 @@
             }
         }
 
-        /* پشتیبانی از دستگاه‌های با ناچ */
         @supports (padding: max(0px)) {
             body {
                 padding-left: max(12px, env(safe-area-inset-left));
@@ -501,7 +478,6 @@
             }
         }
 
-        /* کاهش انیمیشن برای کاربرانی که ترجیح می‌دهند */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -523,6 +499,7 @@
         <div class="divider"></div>
 
         <div class="buttons">
+            <!-- دکمه ۱: استعلام کلاس‌های دانش‌آموزان -->
             <a href="https://ir4din.github.io/Search/" class="btn" target="_blank" rel="noopener">
                 <span class="btn-icon">👨‍🎓</span>
                 <span class="btn-text">
@@ -532,11 +509,22 @@
                 <span class="btn-arrow">←</span>
             </a>
 
+            <!-- دکمه ۲: سامانه استعلام کلاسی اساتید -->
             <a href="https://3di-io.github.io/BagheriSchedule/" class="btn" target="_blank" rel="noopener">
                 <span class="btn-icon">👨‍🏫</span>
                 <span class="btn-text">
                     <span>سامانه استعلام کلاسی اساتید</span>
                     <small>ورود به پنل اساتید</small>
+                </span>
+                <span class="btn-arrow">←</span>
+            </a>
+
+            <!-- دکمه ۳: سامانه استعلام کانال‌های اطلاع‌رسانی (جدید) -->
+            <a href="https://ir4din.github.io/bagheri/" class="btn" target="_blank" rel="noopener">
+                <span class="btn-icon">📢</span>
+                <span class="btn-text">
+                    <span>سامانه استعلام کانال‌های اطلاع‌رسانی</span>
+                    <small>شبکه‌های اجتماعی و پیام‌رسان‌ها</small>
                 </span>
                 <span class="btn-arrow">←</span>
             </a>
